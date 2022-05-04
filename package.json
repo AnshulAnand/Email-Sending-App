@@ -1,7 +1,7 @@
 {
   "name": "email-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Email sending app",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
