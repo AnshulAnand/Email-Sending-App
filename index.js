@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/send", (req, res) => {
+  
   // Data to be used by output.ejs
   const Data = {
     name: req.body.Name,
@@ -33,13 +34,14 @@ app.post("/send", (req, res) => {
 
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    service: "gmail",
-    host: "mail.google.com",
+    service: "gmail", // use your email service
+    host: "mail.google.com", // use your email service host name
     port: 25,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: "emailusedforprojects@gmail.com",
-      pass: "spoilerspoiler2022",
+      // use your email and password
+      user: "YOUR EMAIL",
+      pass: "YOUR PASSWORD",
     },
     tls: {
       rejectUnauthorized: false,
@@ -48,7 +50,7 @@ app.post("/send", (req, res) => {
 
   // setup email data with unicode symbols
   let mailOptions = {
-    from: `${req.body.Name} <emailusedforprojects@gmail.com>`, // sender address
+    from: `YOUR NAME <YOUR EMAIL>`, // sender address
     to: req.body.Email, // list of receivers
     subject: req.body.Subject, // Subject line
     text: "Hello world?", // plain text body
